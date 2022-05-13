@@ -1,0 +1,9 @@
+<div>
+<button id="increment" (click)="increment()" class="btn btn-primary pt-2">Increment</button>
+
+<div class="pt-2">Current Count: {{ count$ | async }}</div>
+
+<button id="decrement" (click)="decrement()" class="btn btn-danger pt-2 ml-3">Decrement</button>
+
+<button id="reset" (click)="reset()" class="btn btn-info mr-2">Reset Counter</button>
+</div>
