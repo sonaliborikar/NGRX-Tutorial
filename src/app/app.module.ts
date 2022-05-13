@@ -1,27 +1,26 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChildComponent } from './child/child.component';
-import { HomeComponent } from './home/home.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ChildComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    HttpClientModule,
+    FormsModule,
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
