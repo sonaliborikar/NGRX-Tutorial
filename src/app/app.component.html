@@ -1,0 +1,9 @@
+<p>Parent Component</p>
+<app-home></app-home>
+<router-outlet></router-outlet>
+
+<app-child 
+(childButtonEvent)="receivedMessageHandler($event)"
+(onInitEvent)="receiveAutoMsgHandler($event)"
+><app-child>
+  
